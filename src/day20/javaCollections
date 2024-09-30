@@ -1,0 +1,21 @@
+1) in java Collection is a pre-defined interface
+2) collections hold only group of objects or elements or items but not primitives types
+3) collections are designed especially top hold group of objects
+
+                            Collection(I)
+
+                     extends                extents
+
+            List(I)                                 Set(I)
+
+           implements                              implements
+
+          ArrayList(C)                             HashSet(C)
+
+
+4) ArrayList                                        5) HashSet
+----------------------------------                  --------------------------------------
+-> Heterogenous data - allowed                      ->Heterogenous data - allowed
+-> Insertion order - preserved(Index)               ->Insertion order - not preserved
+-> Duplicate elements - allowed                     ->Dulicate elements - not allowed
+-> multiple nulls - allowed

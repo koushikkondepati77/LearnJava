@@ -1,0 +1,11 @@
+AccessModifiers defines the scope of variables and methods
+
+  scope                class         package      subclass       world
+
+1)public                Y               Y           Y               Y
+
+2)protected             Y               Y           Y               N
+
+3)default               Y               Y           N               N
+
+4)private               Y               N           N               N
