@@ -5,19 +5,23 @@ import org.junit.Test;
 public class Reverse {
     public static void main(String[] args) {
         String input = "bob";
-        String s = null;
-        System.out.println(s);
-        System.out.println("string input :" + input);
-        String reverseInput = reversed(input);
-        System.out.println("reversed string :" + reverseInput);
 
-        //checking the string is palindrome or not
-
-        if(input.equals(reverseInput)){
-            System.out.println("given string is palindrome");
-        } else{
-            System.out.println("given string is not a palindrome");
-        }
+        String str = "koushik";
+        input = input + str;
+        System.out.println(input);
+//        String s = null;
+//        System.out.println(s);
+//        System.out.println("string input :" + input);
+//        String reverseInput = reversed(input);
+//        System.out.println("reversed string :" + reverseInput);
+//
+//        //checking the string is palindrome or not
+//
+//        if(input.equals(reverseInput)){
+//            System.out.println("given string is palindrome");
+//        } else{
+//            System.out.println("given string is not a palindrome");
+//        }
 
 
     }
