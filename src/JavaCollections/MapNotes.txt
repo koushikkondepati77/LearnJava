@@ -1,0 +1,104 @@
+//duplicate values are allowed but duplicate keys are not allowed
+    //when u want to store the data in the key-value pair u prefer Map
+
+    //the underlaying datastructure for Hashmap is Hashtable
+    //insertion order is not preserved
+    //null key is allowed once, null values can be multiple
+    //hashmap is preffred when u have more number of search operations(faster)
+
+    //methods in HashMap
+    //put(key,value), putAll(collection c), get(key) - returns value, remove(key), removeAll(collection C)
+    //isEmpty(), size() , containsKey(key) - T/F, containsValue(value) - T/F, clear() - clears the entire hashmap
+    //keyset() - returns all the keys and the return type is Set Object
+    //values() - returns all the values and the return type is Collection
+    //entrySet() - returns each entry of hashMap - key1,value1 key2,value2 ...... - return type is Set.
+    //entry means combination of key value pair, map is a collection of entries
+    //Every entry again can be represented by Entry(I) , Entry(I) is the subinterface of Map(I)
+
+    //Methods in Entry(I)
+    //getKey(), getValue(), setValue(Object O)
+
+    //similarities btw hashmap and hashtable
+    for both classes the underlaying datastructure is Hashtable itself
+    both of them store the data in key,value pairs
+    keys should be unique and values can be duplicated
+    insertion order is not preserved
+
+    //diffrences btw hashmap and hashtable
+    1. Non-synhronized          -           synchronized
+    2. Multiple threads         -           only one thread
+       can be allowed to                    is alllowed to access
+       access the methods                   one method at a time
+    3. not thread safe          -           thread safe
+    4. performance faster       -           performance poor
+    5. one null key and         -           nulls are not allowed in hashtable
+       multiple null values
+       are allowed
+
+
+       Here are **real-life scenarios** where `HashMap` and `Hashtable` are commonly used:
+
+       ---
+
+       ### **HashMap Use Case:**
+       **Scenario**: **E-commerce Application - Cart Management**
+
+       - **Problem**: In an e-commerce platform, you need to maintain a shopping cart for users, where you associate each item with its quantity. You also want to provide fast updates and retrievals.
+
+       - **Solution**: Use a `HashMap` where:
+         - The **key** is the product ID.
+         - The **value** is the quantity of the product.
+
+       ```java
+       HashMap<String, Integer> shoppingCart = new HashMap<>();
+
+       // Add items to the cart
+       shoppingCart.put("product123", 2); // 2 units of product123
+       shoppingCart.put("product456", 1); // 1 unit of product456
+
+       // Update the quantity of an item
+       shoppingCart.put("product123", shoppingCart.get("product123") + 1); // Increment product123 by 1
+
+       // Retrieve quantity of a product
+       int quantity = shoppingCart.get("product123"); // Output: 3
+       ```
+
+       - **Why HashMap?**
+         - Fast lookups and updates.
+         - No need for thread safety (assume shopping cart is user-specific).
+
+       ---
+
+       ### **Hashtable Use Case:**
+       **Scenario**: **Banking System - Account Login Tracking**
+
+       - **Problem**: A banking system needs to keep track of active sessions for users logging into their accounts. The data should be thread-safe because multiple threads may simultaneously access and modify the session data.
+
+       - **Solution**: Use a `Hashtable` where:
+         - The **key** is the user's account ID.
+         - The **value** is the session token.
+
+       ```java
+       Hashtable<String, String> activeSessions = new Hashtable<>();
+
+       // Add a new active session
+       activeSessions.put("account123", "sessionToken123");
+
+       // Check if an account has an active session
+       if (activeSessions.containsKey("account123")) {
+           System.out.println("User is logged in.");
+       }
+
+       // Remove session on logout
+       activeSessions.remove("account123");
+       ```
+
+       - **Why Hashtable?**
+         - Thread safety ensures consistent data access across multiple threads.
+         - Suitable for scenarios where synchronized access is crucial.
+
+       ---
+
+       ### **Comparison in the Scenarios**:
+       1. **HashMap** is chosen for shopping cart management because thread safety isn't required, and it provides better performance.
+       2. **Hashtable** is chosen for session management because thread safety is crucial to avoid race conditions when multiple threads access session data.

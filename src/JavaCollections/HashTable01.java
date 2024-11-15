@@ -3,6 +3,9 @@ package JavaCollections;
 //collection framework defines the different classes and interfaces by which we can represent the group of objects
 
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class HashTable01 {
     public static void main(String[] args) {
@@ -39,6 +42,20 @@ public class HashTable01 {
         for(int k:t.keySet()){
             System.out.println(k+" "+t.get(k));
         }
+
+        //entry specific methods
+        for(Map.Entry entry:t.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        //reading the data using iterator method
+        Set s = t.entrySet();
+        Iterator it = s.iterator();
+        while (it.hasNext()){
+            Map.Entry entry = (Map.Entry) it.next();
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
 
 
 
