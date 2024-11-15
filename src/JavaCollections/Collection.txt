@@ -1,0 +1,62 @@
+1. Collection(I) is a root interface that represents group of elements.
+    //collection is a single entity that holds group of objects or which represents multiple objects
+    //collection framework defines the different classes and interfaces by which we can represent the group of objects
+
+2. Collections(C) is a predefined class in Java that is available in java.util package which contains some utilty
+     methods by which we can perform the operations on collection objects.
+
+3. Collection(I) is a Base interface in the collection Framework
+        |__ List(I)    |__ Set(I)   |__ Queue(I) ----> child interfaces of Collection(I)
+
+4. List(I) is a child of Collection(I)
+     Insertion order is preserved
+     Duplicates are allowed
+
+5. List(I)
+       |__ ArrayList(C)    |__ LinkedList(C)    |__ Vector(C) extends from Stack(C)
+                                                        |____________________|_________[Legacy classes]
+
+6. Set(I) is also a child of Collection(I)
+    Insertion order is not preserved
+    Duplicates are not allowed
+
+7. Set(I)
+     |___ HashSet(C)    |___ LinkedHashSet(C)
+
+8. Queue(I)[FIFO] is also extended from Collection(I)
+     |__ PriorityQueue(C)
+
+9. Map(I) is an independent Interface and it is not a child of Collection(I), Map also represents the group of objects
+   , but those objects should be in <key,value> pairs
+
+   keys cannot be duplicated they are unique.
+   values can be duplicated.
+
+10. Map(I)
+      |__ HashMap(C)   |__ LinkedHashMap(C)  |__ HashTable(C)
+
+11. Methods in Collection(I)
+    add(Object O) //add one object to the collection
+    addAll(Collection C) //this will add multiple objects into collection
+    remove(Object O) //remove one object from collection
+    removeAll(Collection C) //removes all these objects from the collection
+    retainAll(Collection C) // except these group of objects rest of the objects will be removed
+    clear() //clears all the objects from the collection
+    isEmpty() // will check the collection is empty or not
+    size() // will give u how many objects are there in the collection
+    contains(Object O) // will check whether this particular object is present in the collection or not
+    containsAll(Collection C) // will check all these group of elements are present in the collction or not
+    toArray(Collection C) // convert entire collection into array fromat, and this array is in Object[] format
+
+12. Methods in List(I)
+    add(index,Object O)
+    addAll(index, Collection C)
+    remove(index)
+    get(index) // returns the object of that particular index
+    set(index, Object O) //replace the exixting object with the new Object
+
+13. In interface the methods are abstract [ that means definitions are available but not implemented in Collection and Other interfaces
+    for example List(I).
+
+
+
